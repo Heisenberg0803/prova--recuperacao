@@ -52,11 +52,11 @@ public class Controller {
     }
 
     @PutMapping("/{id}/{salario}")
-    public String updateClienteById(@RequestBody Funcionario funcionario, @PathVariable Long id) {
+    public String updateClienteById( @PathVariable Long id, @PathVariable  Integer salario) {
         Optional<Funcionario> velhoFuncionario = resposity.findById(id);
 
         Funcionario funcionarioAtualizado = velhoFuncionario.get();
-        funcionarioAtualizado.setSalario(funcionario.getSalario());
+        funcionarioAtualizado.setSalario(salario);
         resposity.save(funcionarioAtualizado);
         return "Funcionario atualizado com sucesso,obrigado";
 
