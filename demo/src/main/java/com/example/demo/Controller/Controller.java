@@ -58,7 +58,7 @@ public class Controller {
         Funcionario funcionarioAtualizado = velhoFuncionario.get();
         funcionarioAtualizado.setSalario(funcionario.getSalario());
         resposity.save(funcionarioAtualizado);
-        return "Funcionario atualizado com sucesso";
+        return "Funcionario atualizado com sucesso,obrigado";
 
     }
 }
